@@ -2,6 +2,7 @@
  * To verify solution and read challenge description check: https://www.hackerrank.com/challenges/apple-and-orange/problem
  */
 'use strict';
+'use strict';
 
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
@@ -37,7 +38,23 @@ function readLine() {
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
     // Write your code here
-
+    const x = apples.map((apple) => apple + a);
+    const y = oranges.map((orange) => orange + b);
+    
+    console.log(x.reduce((acc, curr) => {
+        if (curr >= s && curr <= t) {
+            acc++;
+        }
+        
+        return acc;
+    }, 0));
+    console.log(y.reduce((acc, curr) => {
+        if (curr >= s && curr <= t) {
+            acc++;
+        }
+        
+        return acc;
+     }, 0))
 }
 
 function main() {
